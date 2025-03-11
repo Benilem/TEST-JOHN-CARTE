@@ -11,7 +11,7 @@ from mistralai import Mistral
 from tavily import TavilyClient
 
 ##############################
-# ClÃ©s API & initialisation  #
+# Clés API & initialisation  #
 ##############################
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
