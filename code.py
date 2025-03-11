@@ -49,11 +49,12 @@ def nettoyer_reponse(texte):
     texte_propre = texte_sans_html.replace('\\n', '\n')  # Convertit '\n' en retour à la ligne
     return texte_propre
 
-def extract_text_from_ocr_response(ocr_response):
-"""Extrait le texte OCR en ignorant les balises image."""
-extracted_text = ""
-pages = ocr_response.pages if hasattr(ocr_response, "pages") else (ocr_response if isinstance(ocr_response, list) else [])
-for page in pages:
+def extraire_texte_ocr(image):
+    """Extrait le texte OCR en ignorant les balises image."""
+    texte = ocr_library.extract_text(image)  # Exemple avec une bibliothèque OCR
+    texte_nettoye = texte.replace('<img>', '')  # Supprime les balises image
+    return texte_nettoye
+    
 if hasattr(page, "markdown") and page.markdown:
 lines = page.markdown.split("\n")
 filtered = [line.strip() for line in lines if not line.startswith("![")]
