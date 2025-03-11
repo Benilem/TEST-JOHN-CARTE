@@ -42,12 +42,12 @@ cursor = conn.cursor()
 # Fonctions utilitaires
 
 ##############################
-def clean_response(response):
-def nettoyer_reponse():
+import re
+def nettoyer_reponse(texte):
     """Nettoie la réponse en supprimant les tags HTML et convertit '\\n' en retours à la ligne."""
-    pass  # À remplacer plus tard par du vrai code
-cleaned = re.sub(r'<[^>]+>', '', cleaned)
-return cleaned.replace("\\n", "\n").strip()
+    texte_sans_html = re.sub(r'<.*?>', '', texte)  # Supprime les tags HTML
+    texte_propre = texte_sans_html.replace('\\n', '\n')  # Convertit '\n' en retour à la ligne
+    return texte_propre
 
 def extract_text_from_ocr_response(ocr_response):
 """Extrait le texte OCR en ignorant les balises image."""
