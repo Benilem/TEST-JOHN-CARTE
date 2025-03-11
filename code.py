@@ -43,9 +43,9 @@ cursor = conn.cursor()
 
 ##############################
 def clean_response(response):
-"""Nettoie la réponse en supprimant les tags HTML et convertit '\\n' en retours à la ligne."""
-match = re.search(r'value="(.*?)"\)', response, re.DOTALL)
-cleaned = match.group(1) if match else response
+def nettoyer_reponse():
+    """Nettoie la réponse en supprimant les tags HTML et convertit '\\n' en retours à la ligne."""
+    pass  # À remplacer plus tard par du vrai code
 cleaned = re.sub(r'<[^>]+>', '', cleaned)
 return cleaned.replace("\\n", "\n").strip()
 
