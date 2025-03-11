@@ -1,0 +1,4 @@
+Streamlit
+Openai
+Mistralai
+tavily-python
