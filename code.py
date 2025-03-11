@@ -19,7 +19,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
 TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
 
-if not OPENAI_API_KEY or not MISTRAL_API_KEY or not TAVILY_API_KEY:
+if not     OPENAI_API_KEY or not MISTRAL_API_KEY or not TAVILY_API_KEY:
 st.error("Veuillez définir les variables OPENAI_API_KEY, MISTRAL_API_KEY et TAVILY_API_KEY dans votre environnement.")
 st.stop()
 
