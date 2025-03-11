@@ -19,9 +19,9 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
 TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
 
-if not     OPENAI_API_KEY or not MISTRAL_API_KEY or not TAVILY_API_KEY:
-st.error("Veuillez définir les variables OPENAI_API_KEY, MISTRAL_API_KEY et TAVILY_API_KEY dans votre environnement.")
-st.stop()
+if not st.secrets["OPENAI_API_KEY"] or not st.secrets["MISTRAL_API_KEY"] or not st.secrets["TAVILY_API_KEY"]:
+    st.error("Veuillez définir les variables OPENAI_API_KEY, MISTRAL_API_KEY et TAVILY_API_KEY dans votre environnement.")
+
 
 client_openai = OpenAI(api_key=OPENAI_API_KEY)
 client_mistral = Mistral(api_key=MISTRAL_API_KEY)
